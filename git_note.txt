@@ -1,0 +1,130 @@
+git基础概念：
+	分布式：
+	元数据储存
+	全局的版本号	
+	SHA-1哈希算法
+
+安装：
+//windows
+	https://github-production-release-asset-2e65be.s3.amazonaws.com/23216272/42bc4300-3a11-11e9-8a7d-8c1dc79eb654?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20190407%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190407T070552Z&X-Amz-Expires=300&X-Amz-Signature=37369d7d8ca963
+
+	https://gitforwindows.org/
+	打开Git-Bash
+	git config --user.name "Edward"
+	git config --user.email "邮箱"  //自保家门
+
+//Mac OS	
+	安装homebrew https://brew.sh/
+	从APPStore中安装Xcode。运行Xcode，Xcode->Preferences->Downloads->选择Command Line Tools->install
+	
+
+基本操作：
+	Git init
+	Initialized empty Git repository in 路径
+
+创建版本库(repository)：  
+	命令行创建空目录：mkdir name
+	显示当前目录路径：pwd
+	将当前目录创建为仓库: git init
+	Initialized empty Git repository in /Users/michael/learngit/.git/    //已初始化空Git仓库（empty Git repository）
+
+	tips:
+		确保不存在中文路径
+		也不一定必须在空目录下创建Git仓库，选择一个已经有东西的目录也是可以的。不过，不建议你使用自己正在开发的公司项目来学习Git，否则造成的一切后果概不负责。
+		版本控制系统不能管理world文件
+
+
+
+添加文件：
+	必须将文件放置在Git仓库目录
+	添加文件到仓库：git add name   git commit -m "说明"
+		[master (root-commit) 2739463] wrote a reamde file
+		 1 file changed, 2 insertions(+)   //一个文件被改动  键入两行内容
+		 create mode 100644 readme.txt
+
+	tips：回车没有任何显示，这就对了，Unix的哲学是“没有消息就是好消息”，说明添加成功
+		add提交单个文件
+		commit提交多个文件
+
+
+
+版本回退：
+	进入仓库目录进行操作
+
+	状态命令: gti status   //查询提交文件状态
+		On branch master
+		Changes not staged for commit:
+			//记录
+		  (use "git add <file>..." to update what will be committed)
+		  (use "git checkout -- <file>..." to discard changes in working directory)
+
+		        modified:   readme.txt    //修改：  readme.txt
+
+	    no changes added to commit (use "git add" and/or "git commit -a")  //未添加到版本库
+
+    修改内容查看：git diff name
+	    diff --git a/readme.txt b/readme.txt
+		index 46d49bf..9247db6 100644
+		--- a/readme.txt
+		+++ b/readme.txt
+		@@ -1,2 +1,2 @@
+		-Git is a version control system.    //删除的
+		+Git is a distributed version control system. //增加的
+		 Git is free software.  //Git是一个免费的软件
+
+		 tips: git diff顾名思义就是查看difference,显示的格式正是Unix通用的diff格式
+		 	   每次修改后将其两步添加到仓库
+		 	   实时掌握文件状态，请使用git status命令
+		 	   如果status告诉你文件修改过，使用git diff命令查看修改内容
+		 	   Commit：快照
+
+   历史记录： git log  //最近到最远的工作日志
+
+   回退指令：git reset
+
+   tips:
+	   	HEAD指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令git reset --hard commit_id。
+
+		穿梭前，用git log可以查看提交历史，以便确定要回退到哪个版本。
+
+		要重返未来，用git reflog查看命令历史，以便确定要回到未来的哪个版本。
+
+
+	工作区：
+		在电脑中看得到的目录。
+
+	版本库(repository)
+		Git的版本库，工作区的隐藏目录.git
+		.git: stage(暂存区)，master(分支)，指向master的指针HEAD
+
+	管理修改：
+		每次修改之后都需要添加(同一文件亦是)到暂存区，git commit 只能提交暂存区的内容。
+
+	撤销修改：
+		命令git checkout -- readme.txt意思就是，把readme.txt文件在工作区的修改全部撤销，这里有两种情况：
+
+		一种是readme.txt自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；
+
+		一种是readme.txt已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。
+
+		总之，就是让这个文件回到最近一次git commit或git add时的状态。 
+
+
+	删除文件：
+		rm fileName //删除文件
+		git rm fileName //删除版本库文件
+		git commit -m "提交说明" //提交删除
+		git checkout --fileName //撤销删除（修改）
+
+Git跟踪并管理的修改，而非文件。
+
+远程仓库
+	GitHub:本地仓库与GitHub远程仓库之间通过SSH加密。
+
+	创建SSH Key:
+		打开Git Bash ssh-keygen -t rsa -C "邮箱"  一路回车。
+		id_rsa 是私钥 id_rsa.pub 是公钥
+
+		登陆GitHub ——>打开Account settings	——>SSH Keys ——>Add SSH Key ——>文本框粘贴公钥 ——>Add Key。
+		GitHub支持添加多个Key。
+	
