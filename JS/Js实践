@@ -1,0 +1,32 @@
+Js实践：
+	获取子元素： Children 属性 节点对象的属性
+				nodeType 测试节点
+
+				previousSibling  返回上一个同胞
+				nextSibling  返回下一个同胞
+
+				Math.random()  返回随机数 属于Math对象
+					.floor()   取整
+
+
+
+
+	获取同胞(除本身外)函数：
+		function siblings(id){
+			let xNodeObject = document.getElementById(id);
+			var nodes = [];
+			while(xNodeObject = xNodeObject.nextSibling){
+				if(xNodeObject.nodeType == 1){
+					nodes.push(xNodeObject);
+				}
+			}
+			xNodeObject = document.getElementById(id);
+			while(xNodeObject = xNodeObject.previousSibling){
+				if(xNodeObject.nodeType == 1){
+					nodes.push(xNodeObject);
+				}
+			}
+			return nodes;		
+		}
+
+		函数用了while循环和if语句，最终返回除本身以外同胞元素的数组。
