@@ -1,0 +1,119 @@
+/* pages/post/posting/index.wxss */
+.head{padding:20rpx 20rpx;border-bottom:2rpx #ddd solid;}
+.btn-box{float:right;height:50rpx;line-height:50rpx;}
+.btn{background:#fff;border-radius:15rpx;font-size:32rpx;border:2rpx #057f4c solid;padding:0 10rpx;color:#057f4c;}
+.head .icon{border-top-color:#057f4c;margin-right:0;top:20rpx;margin-left:10rpx;}
+
+.xTitBox{
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-bottom: 2rpx solid #aaa;
+}
+.xTitBar{
+  width: 80%;
+  height: 80rpx;
+  margin: 0 auto;
+  font-size: 36rpx;
+  font-weight: bold;
+}
+.xTit{
+  float: left;
+}
+.xListBox{
+  width: 160rpx;
+  height: 55rpx;
+  text-align: center;
+  line-height: 55rpx;
+  float: right;
+  margin: 20rpx 0;
+  border: 3.5rpx solid #388E3C;
+  border-radius: 20rpx;
+}
+
+
+
+/* 编辑框 */
+.xFormBox{
+  width: 100%;
+}
+.xInput{
+  width: 85%;
+  height: 300rpx;
+  margin: 10rpx auto;
+  font-size: 32rpx;
+}
+
+
+.xBox{
+  width:85%;
+  height: 200rpx;
+  margin: 0 auto;
+}
+.xImg{
+  width: 150rpx;
+  height: 150rpx;
+  margin-right: 20rpx; 
+}
+.xBoxBlack{
+  width: 150rpx;
+  height: 150rpx;
+  background: #ccc;
+  display: inline-block;
+}
+.xBoxBlack .xW{
+  width: 110rpx;
+  height: 10rpx;
+  margin: 70rpx auto;
+  background: #333;
+}
+.xBoxBlack .xH{
+  width: 10rpx;
+  height: 110rpx;
+  margin: 70rpx auto;
+  position: relative;
+  bottom: 125rpx;
+  background: rgb(77, 71, 71);
+}
+
+/* 选填 */
+.xButtomOption{
+  width: 85%;
+  margin: 0 auto;
+}
+.xButtomOption .xTit{
+  font-size: 40rpx;
+  font-weight: bold;
+}
+/* opation */
+.xOptionBox{
+  margin: 10rpx 0;
+}
+.xOption{
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 32rpx;
+  border-bottom: 2rpx solid #aaa;
+}
+.xName{
+  margin-left: 15rpx;color:#999;
+}
+.xValue{
+  float: right;
+  margin-right: 15rpx;
+  width:50%;height:70rpx;
+}
+.inp-txt{display:block;width:100%;height:70rpx;line-height:70rpx;text-align:right;color:#333;}
+.inp-txtfc{color:#333;}
+
+/* 按钮 */
+.xButton{
+  width: 250rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  background: rgb(236, 147, 13);
+  margin: 30rpx auto;
+  text-align: center;
+  border-radius: 10rpx;
+  color: #fff;
+}

@@ -1,0 +1,41 @@
+<!--订单详情，已完成的订单-->
+<view class="box">
+  <view class="order-infor border">
+    <view class="state">{{state}}</view>
+    <view class="infor" wx:for="{{inforArray}}">
+      <view>{{item.name}}</view>
+      <view>{{item.content}}</view>
+    </view>
+  </view>
+  <view class="good-infor border">
+    <view class="img">
+      <image src="{{imgUrl}}"/>
+    </view>
+    <view class="desc">
+      <view class="tit">
+        <text class="price">{{price}}卢布</text>
+        <text class="title">{{title}}</text>
+      </view>
+      <view class="sum">
+        <text class="num">{{num}}</text>
+        <text class="goodnew">新旧程度：{{goodnew}}</text>
+      </view>
+    </view>
+  </view>
+  
+  <view class="after-box">
+    <view class="tit-box">
+      <text class="after-tit">详情</text>
+      <icon class="icon-xiajiantou"></icon>
+    </view>
+    <view class="after-item" wx:for="{{aftermeterArray}}">
+      <view class="after-step"><icon class="icon-circle"></icon>{{item.step}}</view>
+      <view class="after-reason">{{item.reason}}</view>
+      <view class="after-time">{{item.time}}</view>
+    </view>
+  </view>
+  
+
+  
+</view>
+

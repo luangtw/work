@@ -1,0 +1,4 @@
+.topBox{margin-top: 30rpx;margin-left: 3%;margin-right: 3%;width: 94%;height: 70rpx;background-color: #ef8200;font-size: 32rpx;color: #fff;text-align: center;border-radius: 25rpx 25rpx 25rpx 25rpx;line-height: 70rpx;}
+.payment-Code{width: 60%; margin-top: 40rpx;margin-left: 20%;}
+.remind{margin-top: 40rpx;margin-left: 10%;margin-right: 10%;font-size: 24rpx;display: block;}
+.bottomBox{width: 100%;height: 80rpx;position: fixed;bottom: 0;background-color: #ef8200;font-size: 32rpx;color: #fff;text-align: center;line-height: 60rpx;}

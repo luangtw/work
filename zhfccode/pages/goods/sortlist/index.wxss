@@ -1,0 +1,110 @@
+/* pages/goods/sortlist/index.wxss */
+/*搜索框*/
+.searchbar-result{
+    margin-top: 0;
+    font-size: 32rpx;
+}
+.searchbar-result:before{
+    display: none;
+}
+.weui-cell{
+    padding: 30rpx 35rpx 30rpx 80rpx;
+}
+
+ 
+.tips{
+  width: 100%;
+  margin: 0 auto;
+  color: #aaa;padding:25rpx 20rpx;
+  border-top:2rpx #ccc solid;
+
+}
+.tips text{
+  font-size: 45rpx;
+  color: rgb(245, 207, 38);
+}
+
+
+
+
+/**房源列表**/
+.weui-media-box__hd {width:185rpx;height:185rpx;line-height:185rpx;}
+.weui-media-box__title{color:#089149;font-size:34rpx;}
+.weui-media-box__desc{margin-bottom:15rpx;color:#333;font-size:24rpx;}
+.weui-media-box__desc text{margin-right:40rpx;}
+.lh-f12{font-size:32rpx;}
+.lh-cg{color:#aaa;}
+
+/*筛选*/
+
+.placeholder{font-size:28rpx;text-align:center;padding:25rpx 0;}
+.cur{color:#ef8201;}
+.cur .icon{border-top-color:#ef8201;}
+.fontbg{padding:25rpx 10rpx 0;}
+.fontbg text{display:inline-block;margin:20rpx 10rpx;padding:5rpx;font-size:28rpx;background:#eee;width:19%;letter-spacing: -2rpx;text-align:center;}
+.btn-box{text-align:center;width:100%;}
+.button-sp-area{
+    margin: 0 auto;
+    padding-top: 35rpx;
+    width:40%;
+    display:inline-block;margin:0 25rpx;
+}
+.button-sp-area .weui-btn{height:70rpx;line-height:60rpx;font-size:36rpx;}
+.button-sp-area .weui-btn[type=primary]{background:#ef8201;border:2rpx #ef8201 solid;color:#fff;}
+
+
+/*遮罩层*/
+.mask{width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 235rpx;
+    left: 0;
+    background: #000;
+    z-index: 9000;
+    opacity: 0.5;}
+/*弹出层*/
+.modalDlg{
+    width: 100%;
+    position: fixed;
+    top: 235rpx;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    margin: 0 auto;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;padding-bottom:45rpx;
+}
+.showprice-box{width:100%;text-align:center;color:#ddd;display: flex;margin-top:25rpx;font-size:28rpx;}
+.showprice-title{text-align:left;font-size:32rpx;width:100%;padding-left:25rpx;}
+.weui-input{width:40%;border:2rpx #ddd solid;border-radius:10rpx;height:65rpx;line-height:65rpx;font-size:28rpx;display:flex;margin:0 25rpx;}
+/**行政区域**/
+.lh-select-area{width:100%;border-bottom:2rpx #ddd solid;margin:0 35rpx;font-size:32rpx;}
+.lh-select-head{position:relative;height:100rpx;line-height:100rpx;color:#8a8a8a;padding:0 0 0 25rpx;}
+/*箭头*/
+.lh-select-head .icon-xiajiantou{top:35rpx;right:-10rpx;}
+.icon-zuojiantou{top:35rpx;}
+.lh-select-box{margin-top:0rpx;margin-bottom:20rpx;}
+/**search more**/
+.lh-searchmore{margin:25rpx;text-align:center;}
+.button-sp-area{
+    margin: 0 auto;
+    padding-top: 35rpx;
+    width: 40%;
+}
+.button-sp-area .weui-btn{height:70rpx;line-height:60rpx;font-size:36rpx;background:#ef8201;border:2rpx #ef8201 solid;color:#fff;}
+.lh-select-sort1{padding-left:25rpx;}
+.lh-select-sort1 text{font-weight: bold;margin:0rpx 20rpx 0 0;font-size:28rpx;height:40rpx;line-height:40rpx;}
+.lh-select-sort2{margin-top:25rpx;padding-left:25rpx;}
+.lh-select-sort2 text{font-size:28rpx;margin:10rpx 25rpx 0 0;}
+.lh-select-box .cur{color:#93bd29;}
+/*价格区间*/
+.showprice-box{width:100%;text-align:center;color:#ddd;display: flex;margin-top:25rpx;font-size:28rpx;}
+
+.iconfont{font-size:32rpx;vertical-align: middle;margin-bottom:10rpx;}
+.showprice-box .weui-input{width:40%;border:2rpx #ddd solid;border-radius:10rpx;height:65rpx;line-height:65rpx;font-size:28rpx;display:flex;margin:0 25rpx;color:#333;}
+
+.button-sp-area{width:100%;text-align:center;}
+.button-sp-area button{width:30%;display:inline-block;margin:0 25rpx;}
+.button-sp-area button[type="gray"]{background:#ddd;border:2rpx #ccc solid;color:#333;}

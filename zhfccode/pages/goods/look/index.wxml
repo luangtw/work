@@ -1,0 +1,4 @@
+<view class='topBox'>咨 询 费</view>
+<image class='payment-Code' src='{{paymentCode}}' mode='widthfix' data-src='{{paymentCode}}' bindtap='previewImage'></image>
+<text class='remind'>注：10元的有效期是7天，有效期之内我们的客服会免费提供潜在的房源信息，具体看房时间和一些独家私有房源信息（整租/合租/招租），在为签署合同之前，所有服务都是免费，付款之前请仔细看价格行情和温馨提示！</text>
+<view class='bottomBox'>我们是俄罗斯独家愿意为客户做担保的公司平台</view>

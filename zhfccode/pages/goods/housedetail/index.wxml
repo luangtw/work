@@ -1,0 +1,115 @@
+<import src="../../../wxParse/wxParse.wxml"/>
+<!--房源细节-->
+<!--轮播图-->
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{true}}" indicator-color="{{beforeColor}}" indicator-active-color="{{afterColor}}">
+  <block wx:for="{{swiperPic}}" wx:key="{{item.index}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" bindtap="imgYu" data-list="{{swiperPic}}" data-src="{{item}}"/>
+    </swiper-item>
+  </block>
+</swiper>
+
+<!-- 标题 -->
+<view class='xTitBox border'>
+  <text class='xTit'>{{housedetail.title}}</text>
+</view>
+<!-- end -->
+
+<!-- 房屋价格，楼层信息 -->
+<view class="houseinforbox">
+  <view class="cost">
+    <text class="house-price">{{housedetail.price}}</text>
+    <text class="lh-f12 lh-cg">卢布/月</text>
+  </view>
+  <view class="houseinfor">
+    <text>{{housedetail.rooms}}室{{housedetail.parlors}}厅</text>
+    <text>楼层：{{housedetail.floor}}/{{housedetail.totalFloor}}</text>
+    <text></text>
+  </view>
+  <view class="houseinfor">
+    <text>总面积：{{housedetail.area}}平米</text>
+  </view>
+  <view class="houseinfor">
+    <text>厨房：{{housedetail.area}}平米</text>
+  </view>
+  <view class="houseinfor">
+    <text>房龄：{{housedetail.age}}年</text>
+  </view>
+  <view class="houseinfor">
+    <text>行政区：{{housedetail.region}}</text>
+  </view>
+  <view class="houseinfor hidden">
+    <text>城市：{{housedetail.city}}</text>
+  </view>
+  <view class="address1">地址：{{housedetail.position}}</view>
+  
+  <view class="subway">地铁：{{housedetail.subway}}</view>
+  
+</view>
+<view class="border hidden"></view>
+
+<!-- 信息表 
+<view class='xFromBox'>
+  <view class='xFrom'>
+    <view class='xLine' wx:for='{{from}}'>
+      <text class='xInformation'>{{item.att}}</text><text class='xPrice'>{{item.value}}</text>
+    </view>
+  </view>
+</view>
+<view class="border"></view>-->
+<!-- end -->
+
+<!-- 图片 -->
+<view class='xImgBox hidden'>
+  <view class="sum hidden">介绍</view>
+  <image class='xImg' wx:for='{{images}}' src='{{item}}'></image>
+  <view class="address hidden">
+    <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+  </view>
+</view>
+<!-- end -->
+
+<!-- 留言板 -->
+
+<view class='sum hidden'>留言板</view>
+
+<view class='xBorder hidden'></view>
+<view class='xCommenBox hidden'>
+  <view class='xCommentBox border' wx:for='{{msg}}'>
+    <view class='xInformationBox'>
+      <text class='xUser xBlock'>{{item.user}}</text>
+      <text class='xUser xBlock'>{{item.time}}</text>
+      <text class='xGood xBlock'>{{item.good}}</text>
+      <text class='xReply xBlock'>{{item.reply_b}}</text>
+    </view>
+    <view class='xComment'>{{item.comment}}</view>
+    <view class='xReplyUserLine' wx:if='{{item.reply}}'>
+      <text class='xReplyUser'>{{item.replyUser}}</text><view class='xReply'>{{item.reply}}</view>
+    </view>    
+  </view>
+</view>
+
+
+<!-- 回复  -->
+ <view class='xInputBox hidden'><input class='xInput' placeholder='请在此处输入你想回复的内容..' bindinput='setValue'></input><image class='xIconReply' src='/images/reply01.png'></image></view>
+
+
+ 
+<!-- 温馨提示 -->
+<view class="tip-box">
+  <view class="tips">
+    <text>温馨提示：</text>
+    {{tips}}
+  </view>
+</view>
+
+ <navigator url="../../research/index"><view class='xButton'>我想看房</view></navigator>
+
+ <!-- 帖子浏览信息 
+ <view class='xBrowseBox fontMin'>
+  <view class='xBrowseInformationBox' wx:for='{{brawse}}'>
+    <text class='xBrowseInformation'>{{item.brawse}}</text>
+    <text class='xPrice'>{{item.quantity}}</text>
+  </view>
+ </view>
+ -->

@@ -1,0 +1,70 @@
+/* pages/find/find.wxss */
+page{
+  font-size: 30rpx;
+}
+.xBoxPage{
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 20rpx;
+
+}
+.xBoxPage .xTitle{
+  font-weight: bold;
+  font-size: 35rpx;
+  margin-bottom: 30rpx;
+}
+.xBoxPage .xListBox{
+  width: 100%;
+}
+.xBoxPage .xList{
+  line-height: 70rpx;
+  border-bottom: 1rpx solid #aaa;
+}
+.xListBox .xList .xOption{
+  display: inline-block;
+}
+.xListBox .xList .xRight{
+  float: right;
+}
+.xListBox .xList .xRight text{
+  margin: 0 25rpx;
+}
+.xList .xRight input{
+  border: 1rpx solid #ccc;
+  border-radius: 10rpx;
+  width: 50%;
+  min-height: 20rpx;
+  line-height: 40rpx;
+  height: 30rpx;
+  margin-top: 20rpx;
+  float: right;
+}
+/* 提示 */
+.xTips{
+  background: #EF8200;
+  font-size: 35rpx;
+  color: #fff;
+  text-align: center;
+  margin-top: 50rpx; 
+  padding: 10rpx 0;
+}
+.xTips .xContent{
+  width: 90%;
+}
+/* 按钮 */
+.xButton{
+  width: 270rpx;
+  text-align: center;
+  margin: 50rpx auto;
+  color: #fff;
+  background: #EF8200;
+  font-size: 45rpx;
+  line-height: 65rpx;
+  border-radius: 20rpx;
+}
+.xList .xRight .xR{
+  float: right;
+}
+.on{
+  color: #f00;
+}

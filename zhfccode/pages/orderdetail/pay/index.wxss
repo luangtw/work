@@ -1,0 +1,28 @@
+.remind{display: block; line-height: 70rpx;width: 100%;font-size: 20rpx;text-align: center;color:white;background-color: #ef8200;font-family: Arial;}
+.addressBox{height: 80rpx;width: 90%; margin: 0 auto;border-bottom: 1rpx solid #CCC;}
+.icon-dibiao{display: block;margin-left: 20rpx;margin-top:-4rpx;width: 40rpx;height: 50rpx;float: left; }
+.address{display: block;height: 80rpx;margin-left: 30rpx;font-size: 24rpx;line-height: 80rpx;float: left;}
+.itemInformationBox{height: 135rpx;width: 100%;}
+.item-Pic{display: block;margin-left: 50rpx;margin-top:20rpx;width: 100rpx;height: 100rpx;float: left; }
+.item-Information{display: block;float: left;width: 50%; margin-left: 30rpx;margin-top:30rpx;font-weight: bold;font-size: 32rpx;line-height: 30rpx;}
+.item-Price{display: block;float: left;margin-top:30rpx;font-weight: bold;font-size: 32rpx;line-height: 30rpx;}
+.item-Old-Degree{display: block;float: left;width: 63%; margin-left: 30rpx;margin-top:20rpx;font-weight: bold;font-size: 20rpx;color: #CCC;line-height: 20rpx;}
+.item-Count{display: block;float: left;margin-top:20rpx;font-size: 20rpx;font-weight: bold;color: #CCC;line-height: 20rpx;}
+.remarkBox{height: 130rpx; width: 90%;margin: 0 auto 0 auto;padding-bottom:10rpx;  border-bottom: 1rpx solid #CCC; }
+.remark{display: block;margin-left:30rpx;margin-top:30rpx;font-weight: bold;font-size: 28rpx;line-height: 30rpx;position: relative;}
+.remarkInput{width: 90%;height: 130rpx;top: 300rpx; border-radius: 18rpx;outline: none;border: 1px solid #ccc;position: absolute;font-size: 28rpx;text-indent: 2em;}
+.freightBox{height: 70rpx;width: 90%;border-bottom: 1rpx solid #CCC; margin: 0 auto;}
+.freight{height:70rpx;width:60%; display: block;margin-left:30rpx;font-size: 28rpx;line-height: 70rpx;float: left;}
+.freight-Amount{height:70rpx; display: block;width: 140rpx;font-size: 28rpx;line-height: 70rpx;text-align: right; color: #ccc; float: left;}
+
+.serviceChargeBox{height: 70rpx;width: 90%;border-bottom: 1rpx solid #CCC; margin: 0 auto;}
+.serviceCharge{height:70rpx;width:60%; display: block;margin-left:30rpx;font-size: 28rpx;line-height: 70rpx;float: left;}
+.service-Amount{height:70rpx; display: block;width: 140rpx;font-size: 28rpx;line-height: 70rpx;text-align: right;color: #ccc; float: left;}
+.bottomBox{height:110rpx;width: 80%; position: fixed;bottom: 0; border-top: 1rpx solid #CCC;}
+.total{display: block;height:110rpx;font-weight: bold;margin-left:55rpx;font-size: 36rpx;line-height: 110rpx;float: left;}
+.payAmount{display: block;height:110rpx;font-weight: bold;margin-left:5rpx;font-size: 48rpx;line-height: 110rpx;float: left;color:#f1911c; }
+.payCurrency{display: block;height:110rpx;font-weight: bold;margin-left:3rpx;margin-top: 4rpx; font-size: 28rpx;line-height: 110rpx;float: left;color:#CCC; }
+.submitOrder{display: block;height:106rpx;padding-left: 30rpx;padding-right: 30rpx; font-weight: bold;margin-right:0;font-size: 40rpx; line-height: 110rpx;float: right;color:#f1911c;border: 3rpx solid #f1911c;}
+.payBox{height: 110rpx;width: 20%;position: fixed;bottom: 0;right: 0; border-top: 1rpx solid #CCC;}
+.pay{display: block;height:110rpx;width: 100%; font-weight: bold;font-size: 40rpx; text-align: center; line-height: 110rpx;float: left;color:white;background-color:#f08706; }
+.icon-youjiantou{top:25rpx;}

@@ -1,0 +1,42 @@
+<!--pages/index/publish/publish.wxml-->
+<!-- Tit -->
+<view class="head">
+  <view class="btn-box">
+    <view class="btn">
+      <picker bindchange="bindSortChange" value="{{sortindex}}" range="{{sortarray}}">
+        {{sortarray[sortindex]}}
+        <icon class="icon icon-xiajiantou"></icon>
+      </picker>
+    </view>
+  </view>
+  <text>标题：</text>
+</view>
+
+<!-- form -->
+<view class='xFormBox'>
+  <form class='xForm'>
+    <textarea class='xInput' placeholder='我想说的... '></textarea>
+  </form>
+  <view class='xBox'>
+    <image class='xImg' mode='aspectFill' src='{{img}}'></image><view class='xBoxBlack'><view class='xW'></view><view class='xH'></view></view>
+  </view>
+</view>
+
+<!-- 选填 -->
+<view class='xButtomOption'>
+  <view class='xOpationBox'>
+    <text class='xTitBttom'>选填</text>
+    <view class='icon-xiajiantou' style=""></view>
+  </view>
+  <view class='xOptionBox'>
+   <view class='xOption' wx:for="{{arr}}" wx:for-index="index">
+    <text class='xName'>{{item.name}}</text>
+    <view class='xValue'>
+      <input class='inp-txt' value="{{inputValue}}" placeholder='{{item.value}}' placeholder-class="inp-txtfc" bindfocus="inpFocusOn" bindblur="inpFocusOut" data-index="{{index}}"></input>
+    </view>
+   </view> 
+  </view>
+</view>
+
+<!-- 按钮 -->
+<view class='xButton'>提交</view>

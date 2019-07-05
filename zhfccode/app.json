@@ -1,0 +1,63 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/goods/sortlist/index",
+    "pages/goods/detail/index",
+    "pages/goods/housedetail/index",
+    "pages/goods/look/index",
+    "pages/goods/buydetail/index",
+    "pages/sortinfor/index",
+    "pages/order/index",
+    "pages/my/index",
+    "pages/historyorder/index",
+    "pages/post/index",
+    "pages/collect/index",
+    "pages/orderdetail/finish/index",
+    "pages/comment/index",
+    "pages/post/posting/index",
+    "pages/orderdetail/pay/index",
+    "pages/orderdetail/after/index",
+    "pages/research/index",
+    "pages/question/index",
+    "pages/newscontent/index",
+    "pages/find/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ef8200",
+    "navigationBarTitleText": "中俄房产",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "selectedIconPath": "images/tabselected1.png",
+        "iconPath": "images/tab1.png"
+      },
+      {
+        "pagePath": "pages/sortinfor/index",
+        "text": "分类信息",
+        "selectedIconPath": "images/tabselected2.png",
+        "iconPath": "images/tab2.png"
+      },
+      {
+        "pagePath": "pages/order/index",
+        "text": "订单",
+        "selectedIconPath": "images/tabselected3.png",
+        "iconPath": "images/tab3.png"
+      },
+      {
+        "pagePath": "pages/my/index",
+        "text": "个人中心",
+        "selectedIconPath": "images/tabselected4.png",
+        "iconPath": "images/tab4.png"
+      }
+    ],
+    "color": "#000",
+    "selectedColor": "#ef7c1b"
+  },
+  "sitemapLocation": "sitemap.json"
+}

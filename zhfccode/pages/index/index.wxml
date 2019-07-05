@@ -1,0 +1,287 @@
+<import src="../../wxParse/wxParse.wxml"/>
+<!--index.wxml-->
+<!--轮播图-->
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{true}}" indicator-color="{{beforeColor}}" indicator-active-color="{{afterColor}}">
+  <block wx:for="{{imgUrls}}" wx:key="{{item.index}}">
+    <swiper-item>
+      <navigator url="{{item.link}}" hover-class="navigator-hover">
+        <image src="{{item.url}}" class="slide-image" mode="widthFix"/>
+      </navigator>
+    </swiper-item>
+  </block>
+</swiper>
+
+
+<!--内容导航-->
+<view class="girds-box">
+  <block wx:for="{{itemNavList}}" wx:key="{{item.viewid}}">
+    <navigator class="girds-cell" url="../goods/sortlist/index?id={{item.viewid}}&catname={{item.name}}" hover-class='none'>
+      <view class="girds-pic"><image src="{{item.pic}}"/></view>
+      <text>{{item.name}}</text>
+    </navigator>
+  </block>
+</view>
+
+
+<!--ad banner-->
+<navigator url="{{adpicUrl}}" class="ad-banner">
+  <image src="{{adbanner}}"/>
+</navigator>
+
+
+
+<!--行情-->
+<view class="lh-title-box">
+  <view class="lh-title">莫斯科不动产行情</view>
+  <navigator class="weui-cell__ft weui-cell__ft_in-access lh-more" url="../newscontent/index?catname=莫斯科不动产行情">查看详细</navigator>
+</view>
+<view class="weui-flex lh-pd">
+    <view class="weui-flex__item lh-pl">
+      <view class="placeholder lh-f14 lh-cg">
+        全市均价
+      </view>
+      <view class="placeholder lh-h1">
+        <text class="lh-price">{{goodsPirce}}</text>
+        <text class="lh-f12">卢布/平米</text>
+      </view>
+    </view>
+    <view class="weui-flex__item">
+      <view class="placeholder lh-f14 lh-cg">
+        买房房数
+      </view>
+      <view class="placeholder lh-h1">
+        <text class="lh-price">{{goodsNum}}</text>
+        <text class="lh-f12">套</text>
+      </view>
+    </view>
+</view>
+
+
+<!--title，搜索房源-->
+<view class="lh-title-box lh-mt">
+  <view class="lh-title">搜索房源</view>
+</view>
+<!--城市，租赁买卖picker-->
+<view class="lh-picker-box">
+  <view class="lh-picker-bg">
+    <view class="lh-picker-line"></view>
+    <view class="lh-picker">
+      <picker bindchange="bindCityChange" value="{{cityindex}}" range="{{cityarray}}">
+          {{cityarray[cityindex]}}
+          <icon class="icon icon-xiajiantou"></icon>
+        </picker>
+    </view>
+    <view class="lh-picker">
+      <picker bindchange="bindSortChange" value="{{sortindex}}" range="{{sortarray}}">
+          {{sortarray[sortindex]}}
+          <icon class="icon icon-xiajiantou"></icon>
+        </picker>
+    </view>
+  </view>
+</view>
+
+
+<!--筛选条件，行政区-->
+<view class="lh-select-area">
+  <view class="lh-select-head" catchtap="selectShow" data-index="0">
+    行政区
+    <text class="lh-f12">(可多选)</text>
+    <icon class="icon {{selectedFlag[0]?'icon-xiajiantou':'icon-zuojiantou'}}"></icon>
+  </view>
+  <view class="lh-select-box" hidden="{{!selectedFlag[0]}}">
+    
+    <view class="lh-select-sort1">
+      <block wx:for="{{boroughArray}}" wx:for-index="index" wx:key="{{item.index}}">
+        <text data-index="{{index}}" catchtap="toggleBorough" class="{{boroughFlag[index]?'cur':''}}">{{boroughArray[index]}}</text>
+      </block>
+    </view>
+
+    <view  class="lh-select-sort2">
+      <block wx:for="{{lineArray}}" wx:for-index="index" wx:key="{{item.index}}">
+        <text data-index="{{index}}" catchtap="toggleLine" class="{{lineFlag[index]?'cur':''}}">{{lineArray[index]}}</text>
+      </block>
+    </view>
+  </view>
+</view>
+
+
+<!--筛选条件，地铁线-->
+<view class="lh-select-area">
+  <view class="lh-select-head" catchtap="selectShow" data-index="1">
+    地铁线
+    <text class="lh-f12">(可多选)</text>
+    <icon class="icon {{selectedFlag[1]?'icon-xiajiantou':'icon-zuojiantou'}}"></icon>
+  </view>
+  <view class="lh-select-box"  hidden="{{!selectedFlag[1]}}">
+    
+    <view class="lh-select-sort1">
+      <block wx:for="{{subwayArray}}" wx:for-item="item" wx:for-index="index" wx:key="{{item.index}}">
+        <text data-index="{{index}}" catchtap="togglesubWay" class="{{subWayFlag[index]?'cur':''}}"> {{item.line}}</text>
+      </block>
+    </view>
+
+    <block wx:for="{{subwayArray}}" wx:for-item="item" wx:for-index="index" wx:key="{{item.index}}">
+      <view class="lh-select-sort2 {{subWayFlag[index]?'':'hidden'}}">
+        <block wx:for="{{item.son}}" wx:for-item="item"  wx:for-index="index" wx:key="{{item.index}}">
+          <text data-index="{{index}}" catchtap="togglessubWayDetail" class="{{subWayDetailFlag[index]?'cur':''}}">{{item}}</text>
+        </block>
+      </view>
+    </block>
+
+  </view>
+</view>
+
+
+<!--筛选条件，户型-->
+<view class="lh-select-area">
+  <view class="lh-select-head" catchtap="selectShow" data-index="2">
+    户型
+    <text class="lh-f12">(可多选)</text>
+    <icon class="icon {{selectedFlag[2]?'icon-xiajiantou':'icon-zuojiantou'}}"></icon>
+  </view>
+  <view class="lh-select-box"  hidden="{{!selectedFlag[2]}}">
+    
+      <view class="lh-select-sort1">
+        <block wx:for="{{layoutArray}}" wx:for-item="item" wx:for-index="index" wx:key="{{item.index}}">
+          <text data-index="{{index}}" catchtap="toggleHome" class="{{homeFlag[index]?'cur':''}}">{{layoutArray[index]}}</text>
+        </block>
+      </view>
+  </view>
+</view>
+
+<!--筛选条件，价格-->
+<view class="lh-select-area">
+  <view class="lh-select-head" catchtap="selectShow" data-index="3">
+    价格区间
+    <text class="lh-f12">(卢布)</text>
+    <icon class="icon {{selectedFlag[3]?'icon-xiajiantou':'icon-zuojiantou'}}"></icon>
+  </view>
+  <view class="lh-select-box"  hidden="{{!selectedFlag[3]}}">
+    <view class="showprice-box">
+      <input class="weui-input" name="name" placeholder="最小" />
+      —
+      <input class="weui-input" name="name" placeholder="最大" />
+    </view>
+  </view>
+</view>
+
+
+<!--筛选条件，面积-->
+<view class="lh-select-area">
+  <view class="lh-select-head" catchtap="selectShow" data-index="4">
+    面积
+    <text class="lh-f12">(平米)</text>
+    <icon class="icon {{selectedFlag[4]?'icon-xiajiantou':'icon-zuojiantou'}}"></icon>
+  </view>
+  <view class="lh-select-box"  hidden="{{!selectedFlag[4]}}">
+    <view class="showprice-box">
+      <input class="weui-input" name="name" placeholder="50" />
+      —
+      <input class="weui-input" name="name" placeholder="80" />
+    </view>
+  </view>
+</view>
+
+
+<!--展开所有筛选项-->
+<view class="slidemore" bindtap="showAll">{{slideMoreTit}}</view>
+<!--searchBtn-->
+<view class="button-sp-area">
+  <navigator url="../goods/sortlist/index">
+    <button class="weui-btn" type="primary" >搜索</button>
+  </navigator>
+</view>
+
+
+<!--title，推荐好房-->
+<view class="lh-title-box lh-mt">
+  <view class="lh-title">推荐好房</view>
+</view>
+<!--房源列表-->
+<view class="weui-panel__bd">
+  <navigator url="../goods/housedetail/index?id={{item.id}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active" wx:for="{{houseListArray}}" wx:key="{{item.id}}">
+    <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+      <image class="weui-media-box__thumb" src="{{item.image}}" />
+    </view>
+    <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+      <view class="weui-media-box__title">
+        {{item.price}}
+        <text class="lh-f12 lh-cg">卢布/月</text>
+      </view>
+      <view class="weui-media-box__desc">{{item.title}}</view>
+      <view class="weui-media-box__desc">
+        <text>{{item.rooms}}室{{item.parlors}}厅</text>
+        <text>{{item.area}}平</text>
+        <text>{{item.floor}}/{{item.totalFloor}}层</text>
+      </view>
+      <view class="weui-media-box__desc">
+        {{item.position}}
+      </view>
+    </view>
+  </navigator>
+</view>
+
+<view class="seeall">
+  <navigator url="../goods/sortlist/index" hover-class='false'>
+    <view class="seeall-text">查看全部买卖房</view>
+  </navigator>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+<view class="icon-group">微信小程序外部库引入图标</view>
+<view class="icon-group">
+  <icon class="iconfont icon-zhiding"></icon>
+  <icon class="iconfont icon-zuojiantou"></icon>
+  <icon class="iconfont icon-youjiantou"></icon>
+  <icon class="iconfont icon-shangjiantou"></icon>
+  <icon class="iconfont icon-xiajiantou1"></icon>
+  <icon class="iconfont icon-xiajiantou"></icon>
+</view>
+<view class="icon-group">
+  <icon class="iconfont icon-gengduotianchong"></icon>
+  <icon class="iconfont icon-erweima"></icon>
+  <icon class="iconfont icon-fenleiorguangchangorqita"></icon>
+  <icon class="iconfont icon-dibiao"></icon>
+  <icon class="iconfont icon-bangzhu"></icon>
+  <icon class="iconfont icon-xinfeng"></icon>
+</view> 
+<view class="icon-group">
+  <icon class="iconfont icon-duihuaxinxi"></icon>
+  <icon class="iconfont icon-sousuo"></icon>
+  <icon class="iconfont icon-shouye"></icon>
+  <icon class="iconfont icon-shezhi"></icon>
+  <icon class="iconfont icon-shanchu"></icon>
+  <icon class="iconfont icon-dianhua"></icon>
+</view>
+-->

@@ -1,0 +1,257 @@
+<!--search-->
+<view class="page">
+    <view class="page__bd">
+        <view class="weui-search-bar">
+            <view class="weui-search-bar__form">
+                <view class="weui-search-bar__box">
+                    <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                    <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+                    <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+                        <icon type="clear" size="14"></icon>
+                    </view>
+                </view>
+                <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+                    <icon class="weui-icon-search" type="search" size="14"></icon>
+                    <view class="weui-search-bar__text">搜索</view>
+                </label>
+            </view>
+            <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+        </view>
+        <!--<view class="weui-cells searchbar-result" wx:if="{{inputVal.length > 0}}">
+            <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">
+                    <view>实时搜索文本</view>
+                </view>
+            </navigator>
+            <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">
+                    <view>实时搜索文本</view>
+                </view>
+            </navigator>
+            <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">
+                    <view>实时搜索文本</view>
+                </view>
+            </navigator>
+            <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">
+                    <view>实时搜索文本</view>
+                </view>
+            </navigator>
+        </view>-->
+    </view>
+</view>
+
+
+
+<!--筛选条件-->
+ <view class="weui-flex">
+    <view class="weui-flex__item">
+        <view data-num="1" class="placeholder {{_num==1?'cur':''}}" bindtap="showSelsectPrice" data-property='price'>
+            按价格
+            <icon class='icon icon-xiajiantou'></icon>
+        </view>
+    </view>
+    <view class="weui-flex__item">
+        <view data-num="2" class="placeholder {{_num==2?'cur':''}}" bindtap="showSelectArea" data-property='area'>
+            按面积
+            <icon class='icon icon-xiajiantou'></icon>
+        </view>
+    </view>
+    <view class="weui-flex__item">
+        <view data-num="3" class="placeholder {{_num==3?'cur':''}}" bindtap="showSelectLayout">
+            按单价
+            <icon class='icon icon-xiajiantou'></icon>
+        </view>
+    </view>
+    <view class="weui-flex__item">
+        <view data-num="4" class="placeholder {{_num==4?'cur':''}}" bindtap="showSelectAll">
+            筛选
+            <icon class='icon icon-xiajiantou'></icon>
+        </view>
+    </view>
+</view>
+
+<view class="tips">共为你找到附近的房源<text>{{houseNum}}</text>套</view>
+
+<!--列表-->
+<view class="weui-panel__bd {{id==1?'':'hidden'}}">
+  <navigator url="../housedetail/index?id={{item.id}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active" wx:for="{{houseListArray}}" wx:key="{{item.id}}">
+    <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+      <image class="weui-media-box__thumb" src="{{item.image}}" />
+    </view>
+    <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+      <view class="weui-media-box__title">
+        {{item.price}}
+        <text class="lh-f12 lh-cg">卢布/月</text>
+      </view>
+      <view class="weui-media-box__desc">{{item.title}}</view>
+      <view class="weui-media-box__desc">
+        <text>{{item.rooms}}室{{item.parlors}}厅</text>
+        <text>{{item.area}}平</text>
+        <text>{{item.floor}}/{{item.totalFloor}}层</text>
+      </view>
+      <view class="weui-media-box__desc">{{item.position}}
+      </view>
+    </view>
+  </navigator>
+</view>
+
+
+<!--列表-->
+<view class="weui-panel__bd {{id==2?'':'hidden'}}">
+  <navigator url="../buydetail/index?id={{item.id}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active" wx:for="{{houseListArray}}" wx:key="{{item.id}}">
+    <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+      <image class="weui-media-box__thumb" src="{{item.image}}" />
+    </view>
+    <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+      <view class="weui-media-box__title">
+        {{item.price}}
+        <text class="lh-f12 lh-cg">卢布</text>
+      </view>
+      <view class="weui-media-box__desc">{{item.title}}</view>
+      <view class="weui-media-box__desc">
+        <text>{{item.rooms}}室{{item.parlors}}厅</text>
+        <text>{{item.area}}平</text>
+        <text>{{item.floor}}/{{item.totalFloor}}层</text>
+        <text>8000卢布/平</text>
+      </view>
+      <view class="weui-media-box__desc">{{item.position}}</view>
+    </view>
+  </navigator>
+</view>
+
+
+<!--列表-->
+<view class="weui-panel__bd">
+  <navigator url="../housedetail/index?id={{item.id}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active" wx:for="{{houseListArray}}" wx:key="{{item.id}}">
+    <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+      <image class="weui-media-box__thumb" src="{{item.image}}" />
+    </view>
+    <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+      <view class="weui-media-box__title">
+        {{item.price}}
+        <text class="lh-f12 lh-cg">卢布/月</text>
+      </view>
+      <view class="weui-media-box__desc">{{item.title}}</view>
+      <view class="weui-media-box__desc">
+        <text>{{item.rooms}}室</text>
+        <text>{{item.area}}平</text>
+        <text>{{item.floor}}/{{item.totalFloor}}层</text>
+      </view>
+      <view class="weui-media-box__desc">{{item.position}}
+      </view>
+    </view>
+  </navigator>
+</view>
+
+
+<view class="slidemore">下拉查看更多>></view>
+
+
+
+<!--遮罩层-->
+<view class="mask" bindtap="ok" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<!-- 弹出层 筛选 -->
+<view class="modalDlg" wx:if="{{showModalAll}}">
+
+    <!--筛选条件，行政区-->
+    <view class="lh-select-area">
+      <view class="lh-select-head" catchtap="selectShow" data-index="0">
+        行政区<text class="lh-f12">(可多选)</text>
+        <icon class="icon {{selectedFlag[0]?'icon-xiajiantou':'icon-zuojiantou'}}"></icon>
+      </view>
+      <view class="lh-select-box" hidden="{{!selectedFlag[0]}}">
+        <view class="lh-select-sort1">
+          <block wx:for="{{boroughArray}}" wx:for-index="index">
+            <text data-index="{{index}}" catchtap="toggleBorough" class="{{boroughFlag[index]?'cur':''}}">{{boroughArray[index]}}</text>
+          </block>
+        </view>
+
+        <view  class="lh-select-sort2">
+          <block wx:for="{{lineArray}}" wx:for-index="index">
+            <text data-index="{{index}}" catchtap="toggleLine" class="{{lineFlag[index]?'cur':''}}">{{lineArray[index]}}</text>
+          </block>
+        </view>
+      </view>
+    </view>
+
+    <!--筛选条件，地铁线-->
+    <view class="lh-select-area">
+      <view class="lh-select-head" catchtap="selectShow" data-index="1">
+        地铁线<text class="lh-f12">(可多选)</text>
+        <icon class="icon {{selectedFlag[1]?'icon-xiajiantou':'icon-zuojiantou'}}"></icon>
+      </view>
+      <view class="lh-select-box"  hidden="{{!selectedFlag[1]}}">
+        
+        <view class="lh-select-sort1">
+          <block wx:for="{{subwayArray}}" wx:for-item="item" wx:for-index="index">
+            <text data-index="{{index}}" catchtap="togglesubWay" class="{{subWayFlag[index]?'cur':''}}"> {{subwayArray[index]}}</text>
+          </block>
+        </view>
+      </view>
+    </view>
+
+    <!--筛选条件，户型-->
+    <view class="lh-select-area">
+      <view class="lh-select-head" catchtap="selectShow" data-index="2">
+        户型<text class="lh-f12">(可多选)</text>
+        <icon class="icon {{selectedFlag[2]?'icon-xiajiantou':'icon-zuojiantou'}}"></icon>
+      </view>
+      <view class="lh-select-box"  hidden="{{!selectedFlag[2]}}">
+        
+          <view class="lh-select-sort1">
+            <block wx:for="{{layoutArray}}" wx:for-item="item" wx:for-index="index">
+              <text data-index="{{index}}" catchtap="toggleHome" class="{{homeFlag[index]?'cur':''}}">{{layoutArray[index]}}</text>
+            </block>
+          </view>
+      </view>
+    </view>
+
+    <!--筛选条件，价格-->
+    <view class="lh-select-area">
+      <view class="lh-select-head" catchtap="selectShow" data-index="3">
+        价格区间<text class="lh-f12">(卢布)</text>
+        <icon class="icon {{selectedFlag[3]?'icon-xiajiantou':'icon-zuojiantou'}}"></icon>
+      </view>
+      <view class="lh-select-box"  hidden="{{!selectedFlag[3]}}">
+        <view class="showprice-box">
+          <input class="weui-input" name="name" placeholder="最小" />
+          —
+          <input class="weui-input" name="name" placeholder="最大" />
+        </view>
+      </view>
+    </view>
+
+
+    <!--筛选条件，面积-->
+    <view class="lh-select-area">
+      <view class="lh-select-head" catchtap="selectShow" data-index="4">
+        面积<text class="lh-f12">(平米)</text>
+        <icon class="icon {{selectedFlag[4]?'icon-xiajiantou':'icon-zuojiantou'}}"></icon>
+      </view>
+      <view class="lh-select-box"  hidden="{{!selectedFlag[4]}}">
+        <view class="showprice-box">
+          <input class="weui-input" name="name" placeholder="50" />
+          —
+          <input class="weui-input" name="name" placeholder="80" />
+        </view>
+      </view>
+    </view>
+
+    <view class="button-sp-area">
+        <button class="weui-btn" type="primary" bindtap='ok' >确定</button>
+    
+        <button class="weui-btn" type="gray" bindtap='ok' >不限</button>
+    </view>
+
+</view>
+
+
+
+
+
+
+
+
+

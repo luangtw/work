@@ -1,0 +1,165 @@
+<view class="xTopSearchBox">
+  <view class='xBoxSearch'>
+    <view class="xSearchIcon"><image src="/images/search01.png"></image></view>
+    <view class="xInput"><input placeholder="请输入搜索内容"></input></view>
+  </view>
+</view>
+
+<!--筛选条件-->
+ <view class="weui-flex">
+    <view class="weui-flex__item">
+        <view data-num="1" class="placeholder {{_num==1?'cur':''}}" bindtap="showSelsectPrice">
+            按价格
+            <icon class='icon icon-xiajiantou'></icon>
+        </view>
+    </view>
+    <view class="weui-flex__item">
+        <view data-num="2" class="placeholder {{_num==2?'cur':''}}" bindtap="showSelectArea">
+            按面积
+            <icon class='icon icon-xiajiantou'></icon>
+        </view>
+    </view>
+    <view class="weui-flex__item">
+        <view data-num="3" class="placeholder {{_num==3?'cur':''}}" bindtap="showSelectLayout">
+            按单价
+            <icon class='icon icon-xiajiantou'></icon>
+        </view>
+    </view>
+    <view class="weui-flex__item">
+        <view data-num="4" class="placeholder {{_num==4?'cur':''}}" bindtap="showSelectAll">
+            筛选
+            <icon class='icon icon-xiajiantou'></icon>
+        </view>
+    </view>
+</view>
+
+<!-- 信息列表 -->
+<!-- 租赁 -->
+<view class='xBox'>
+  <view class='xBlock'><view class="xTxt">租</view>赁</view>
+
+  <navigator url="../goods/housedetail/index?id={{item.id}}" class='xListOption' wx:for="{{rentList}}" wx:key="{{item.viewid}}">
+    <view>
+      <view class='xImgBox'><image src='{{item.image}}'></image></view>
+      <view class='xTextBox'>
+        <view class='xPriceBox'><text class='xPrice'>{{item.price}}</text><text> 卢布/月</text></view>
+        <text class='xTit'>{{item.rooms}}室</text>
+        <view class='xAddBox'><text class='xAdd'>地址：{{item.position}}</text></view>
+      </view>
+    </view>
+  </navigator>
+
+  <!-- 买卖 -->
+  <view class='xBlock'><view class="xTxt">买</view>卖</view>
+  <navigator url="../goods/housedetail/index?id={{item.id}}" class='xListOption' wx:for="{{buyList}}" wx:key="{{item.viewid}}">
+  <view>
+    <view class='xImgBox'><image src='{{item.img}}'></image></view>
+    <view class='xTextBox'>
+      <view class='xPriceBox'><text class='xPrice'>{{item.price}}</text><text> 卢布</text></view>
+      <text class='xTit'>{{item.rooms}}室</text>
+      <view class='xAddBox'><text class='xAdd'>地址：{{item.position}}</text></view>
+    </view>
+  </view>
+</navigator>
+
+  <!-- 查看全部 -->
+  <navigator class='xSeeAll' url="../goods/sortlist/index">查看全部</navigator>
+</view>
+
+
+<!--遮罩层-->
+<view class="mask" bindtap="ok" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<!-- 弹出层 筛选 -->
+<view class="modalDlg" wx:if="{{showModalAll}}">
+
+    <!--筛选条件，行政区-->
+    <view class="lh-select-area">
+      <view class="lh-select-head" catchtap="selectShow" data-index="0">
+        行政区<text class="lh-f12">(可多选)</text>
+        <icon class="icon {{selectedFlag[0]?'icon-xiajiantou':'icon-zuojiantou'}}"></icon>
+      </view>
+      <view class="lh-select-box" hidden="{{!selectedFlag[0]}}">
+        <view class="lh-select-sort1">
+          <block wx:for="{{boroughArray}}" wx:for-index="index">
+            <text data-index="{{index}}" catchtap="toggleBorough" class="{{boroughFlag[index]?'cur':''}}">{{boroughArray[index]}}</text>
+          </block>
+        </view>
+
+        <view  class="lh-select-sort2">
+          <block wx:for="{{lineArray}}" wx:for-index="index">
+            <text data-index="{{index}}" catchtap="toggleLine" class="{{lineFlag[index]?'cur':''}}">{{lineArray[index]}}</text>
+          </block>
+        </view>
+      </view>
+    </view>
+
+    <!--筛选条件，地铁线-->
+    <view class="lh-select-area">
+      <view class="lh-select-head" catchtap="selectShow" data-index="1">
+        地铁线<text class="lh-f12">(可多选)</text>
+        <icon class="icon {{selectedFlag[1]?'icon-xiajiantou':'icon-zuojiantou'}}"></icon>
+      </view>
+      <view class="lh-select-box"  hidden="{{!selectedFlag[1]}}">
+        
+        <view class="lh-select-sort1">
+          <block wx:for="{{subwayArray}}" wx:for-item="item" wx:for-index="index">
+            <text data-index="{{index}}" catchtap="togglesubWay" class="{{subWayFlag[index]?'cur':''}}"> {{subwayArray[index]}}</text>
+          </block>
+        </view>
+      </view>
+    </view>
+
+    <!--筛选条件，户型-->
+    <view class="lh-select-area">
+      <view class="lh-select-head" catchtap="selectShow" data-index="2">
+        户型<text class="lh-f12">(可多选)</text>
+        <icon class="icon {{selectedFlag[2]?'icon-xiajiantou':'icon-zuojiantou'}}"></icon>
+      </view>
+      <view class="lh-select-box"  hidden="{{!selectedFlag[2]}}">
+        
+          <view class="lh-select-sort1">
+            <block wx:for="{{layoutArray}}" wx:for-item="item" wx:for-index="index">
+              <text data-index="{{index}}" catchtap="toggleHome" class="{{homeFlag[index]?'cur':''}}">{{layoutArray[index]}}</text>
+            </block>
+          </view>
+      </view>
+    </view>
+
+    <!--筛选条件，价格-->
+    <view class="lh-select-area">
+      <view class="lh-select-head" catchtap="selectShow" data-index="3">
+        价格区间<text class="lh-f12">(卢布)</text>
+        <icon class="icon {{selectedFlag[3]?'icon-xiajiantou':'icon-zuojiantou'}}"></icon>
+      </view>
+      <view class="lh-select-box"  hidden="{{!selectedFlag[3]}}">
+        <view class="showprice-box">
+          <input class="weui-input" name="name" placeholder="最小" />
+          —
+          <input class="weui-input" name="name" placeholder="最大" />
+        </view>
+      </view>
+    </view>
+
+
+    <!--筛选条件，面积-->
+    <view class="lh-select-area">
+      <view class="lh-select-head" catchtap="selectShow" data-index="4">
+        面积<text class="lh-f12">(平米)</text>
+        <icon class="icon {{selectedFlag[4]?'icon-xiajiantou':'icon-zuojiantou'}}"></icon>
+      </view>
+      <view class="lh-select-box"  hidden="{{!selectedFlag[4]}}">
+        <view class="showprice-box">
+          <input class="weui-input" name="name" placeholder="50" />
+          —
+          <input class="weui-input" name="name" placeholder="80" />
+        </view>
+      </view>
+    </view>
+
+    <view class="button-sp-area">
+        <button class="weui-btn" type="primary" bindtap='ok' >确定</button>
+    
+        <button class="weui-btn" type="gray" bindtap='ok' >不限</button>
+    </view>
+
+</view>

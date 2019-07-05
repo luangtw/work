@@ -1,0 +1,89 @@
+<view class="navbar">
+  <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+</view>
+ 
+<!--首页-->
+<view hidden="{{currentTab!==0}}">
+   <!--全部 订单列表-->
+      <view class="list-box">
+        <view  wx:for="{{ListArray}}"  class="list-item" bindtap="orderDetail" data-index="{{index}}" wx:key="{{item.viewid}}">
+          <view class="img">
+            <image src="{{item.picurl}}"/>
+          </view>
+          <view class="state-box">
+            <view class="{{item.btn=='已完成'?'scan':'gray'&&item.btn=='待支付'?'reply':'gray'}}">{{item.btn}}</view>
+            <text class="price">{{item.price}}</text>
+          </view>
+          <view class="desc">
+            <view class="title">{{item.title}}</view>
+            <text class="time">{{item.time}}</text>
+          </view>
+        </view>
+      </view>
+</view>
+ 
+
+<view hidden="{{currentTab!==1}}">
+  <!--已完成 订单列表-->
+      <view class="list-box">
+        <view  wx:for="{{ListArray}}"  class="list-item {{item.btn=='已完成'?'':'hide'}}" bindtap="orderDetail" data-index="{{index}}" wx:key="{{item.viewid}}">
+          <view class="img">
+            <image src="{{item.picurl}}"/>
+          </view>
+          <view class="state-box">
+            <view class="scan">{{item.btn}}</view>
+            <text class="price">{{item.price}}</text>
+          </view>
+          <view class="desc">
+            <view class="title">{{item.title}}</view>
+            <text class="time">{{item.time}}</text>
+          </view>
+        </view>
+      </view>
+</view>
+ 
+
+<view hidden="{{currentTab!==2}}">
+  <!--待支付 订单列表-->
+      <view class="list-box">
+        <view  wx:for="{{ListArray}}"  class="list-item {{item.btn=='待支付'?'':'hide'}}" bindtap="orderDetail" data-index="{{index}}" wx:key="{{item.viewid}}">
+          <view class="img">
+            <image src="{{item.picurl}}"/>
+          </view>
+          <view class="state-box">
+            <view class="reply">{{item.btn}}</view>
+            <text class="price">{{item.price}}</text>
+          </view>
+          <view class="desc">
+            <view class="title">{{item.title}}</view>
+            <text class="time">{{item.time}}</text>
+          </view>
+        </view>
+      </view>
+</view>
+
+
+<view hidden="{{currentTab!==3}}">
+  <!--退款售后 订单列表-->
+        <view class="list-box">
+          <view  wx:for="{{ListArray}}"  class="list-item {{item.btn!='已完成'&&item.btn!='待支付'?'':'hide'}}" bindtap="orderDetail" data-index="{{index}}" wx:key="{{item.viewid}}">
+            <view class="img">
+              <image src="{{item.picurl}}"/>
+            </view>
+            <view class="state-box">
+              <view class="gray">{{item.btn}}</view>
+              <text class="price">{{item.price}}</text>
+            </view>
+            <view class="desc">
+              <view class="title">{{item.title}}</view>
+              <text class="time">{{item.time}}</text>
+            </view>
+          </view>
+        </view>
+</view>
+
+
+
+
+
+<view class="slidemore">展开更多历史记录>></view>

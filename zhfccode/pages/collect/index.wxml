@@ -1,0 +1,20 @@
+
+<!--收藏列表-->
+<view class="list-box">
+  <block wx:for="{{ListArray}}" wx:key="{{item.viewid}}">
+    <navigator url="../goods/detail/index?id={{item.viewid}}&catname={{item.sort}}" class="list-item">
+      <view class="img">
+        <image src="{{item.picurl}}"/>
+      </view>
+      <view class="desc">
+        <view class="title">{{item.title}}</view>
+        <text class="sort">{{item.sort}}</text>
+        <text class="time">{{item.time}}</text>
+      </view>
+    </navigator>
+  </block>
+</view>
+
+
+
+<view class="slidemore">展开更多历史记录>></view>

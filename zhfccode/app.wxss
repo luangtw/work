@@ -1,0 +1,134 @@
+@import 'weui.wxss';
+
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+
+/**公用**/
+.lh-pd{padding-top:45rpx;}
+.lh-f14{font-size:32rpx;}
+.lh-f12{font-size:24rpx;color: #888}
+.lh-h1{font-size:40rpx;}
+.lh-cg{color:#666;}
+.lh-pl{padding-left:35rpx;}
+.lh-mt{margin-top:10rpx;}
+
+@font-face {
+  font-family: 'iconfont';  /* project id 518032 */
+  src: url('//at.alicdn.com/t/font_518032_t2q88z3jok8iwwmi.eot');
+  src: url('//at.alicdn.com/t/font_518032_t2q88z3jok8iwwmi.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_518032_t2q88z3jok8iwwmi.woff') format('woff'),
+  url('//at.alicdn.com/t/font_518032_t2q88z3jok8iwwmi.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_518032_t2q88z3jok8iwwmi.svg#iconfont') format('svg');
+}
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:60rpx;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/*本项目使用的18个图标  */
+.icon-zhiding:before{content: '\e739';}
+.icon-zuojiantou:before{content: '\e736';}
+.icon-youjiantou:before{content: '\e735';}
+.icon-shangjiantou:before{content: '\e734';}
+.icon-xiajiantou1:before{content: '\e733';}
+.icon-xiajiantou:before{content: '\e6cc';}
+.icon-gengduotianchong:before{content: '\e67f';}
+.icon-erweima:before{content: '\e65f';}
+.icon-fenleiorguangchangorqita:before{content: '\e64f';}
+.icon-dibiao:before{content: '\e64d';}
+.icon-bangzhu:before{content: '\e64a';}
+.icon-xinfeng:before{content: '\e640';}
+.icon-duihuaxinxi:before{content: '\e639';}
+.icon-sousuo:before{content: '\e62f';}
+.icon-shouye:before{content: '\e62d';}
+.icon-shezhi:before{content: '\e62a';}
+.icon-shanchu:before{content: '\e629';}
+.icon-dianhua:before{content: '\e61b';}
+
+
+/**另一个文件移植**/
+.border{
+  border-bottom: 1rpx solid #aaa; 
+}
+.overstrik{
+  font-weight: bold;
+}
+.Right{
+  float: right;
+  margin-left: 20rpx; 
+}
+/* 一级字体 */
+.fontBig{
+  font-size: 40rpx;
+  font-weight: bold;
+}
+/* 末级字体 */
+.fontMin{
+  font-size: 28rpx;
+  color: #888;
+}
+
+
+/*箭头*/
+.icon-xiajiantou{
+  float: right;
+  width: 0;
+  height: 0; 
+  border-top: 16rpx solid #888;
+  border-right: 13rpx solid transparent;
+  border-bottom: none;
+  border-left: 13rpx solid transparent;
+  margin-right:40rpx;
+  position: relative;
+  top: 15rpx;
+  vertical-align: middle;font-size:0;overflow:hidden;
+}
+.icon-zuojiantou{
+  float: right;
+  width: 0;
+  height: 0; 
+  border-right: 16rpx solid #888;
+  border-bottom: 13rpx solid transparent;
+  border-left: none;
+  border-top: 13rpx solid transparent;
+  margin-right:40rpx;
+  position: relative;
+  top: 15rpx;
+  vertical-align: middle;font-size:0;overflow:hidden;
+}
+.icon-youjiantou{ float: right;
+  width: 0;
+  height: 0; 
+  border-left: 16rpx solid #888;
+  border-bottom: 13rpx solid transparent;
+  border-right: none;
+  border-top: 13rpx solid transparent;
+  margin-right:40rpx;
+  position: relative;
+  top: 15rpx;
+  vertical-align: middle;font-size:0;overflow:hidden;}
+
+.slidemore{width: 90%;
+  text-align: center;
+  font-size: 28rpx;
+  margin: 20rpx auto;padding:20rpx 0;
+  color: #888;}
+
+/*温馨提示*/
+.tip-box{background:#efefef;border-top:2rpx #dfdfdf solid;border-bottom:2rpx #dfdfdf solid;margin:15rpx 0;}
+.tips{width:90%;padding:30rpx 0;font-size:32rpx;color:#333;margin:0 auto;}
+.tips text{font-size:36rpx;color:#ef8201;}
+
+
+.hidden{display:none;}
+

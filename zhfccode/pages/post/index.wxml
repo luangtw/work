@@ -1,0 +1,36 @@
+<!--帖子-->
+<view class="head">
+  <view class="btn-box">
+    <view class="btn">
+      <picker bindchange="bindSortChange" value="{{sortindex}}" range="{{sortarray}}">
+        {{sortarray[sortindex]}}
+        <icon class="icon icon-xiajiantou"></icon>
+      </picker>
+    </view>
+  </view>
+  <text>看过的</text>
+</view>
+
+<!--帖子列表-->
+<view class="list-box">
+  <block wx:for="{{ListArray}}" wx:key="{{item.viewid}}">
+    <navigator url="../goods/detail/index?id={{item.viewid}}&catname={{sortarray[sortindex]}}" class="list-item">
+      <view class="img">
+        <image src="{{item.picurl}}"/>
+      </view>
+      <view class="state-box">
+        <view class=" {{state==item.btn?'scan':'reply'}}">{{item.btn}}</view>
+        <text class="price">{{item.price}}</text>
+      </view>
+      <view class="desc">
+        <view class="title">{{item.title}}</view>
+        <text class="time">{{item.time}}</text>
+        <text class="time">{{item.user}}</text>
+      </view>
+    </navigator>
+  </block>
+</view>
+
+
+
+<view class="slidemore">展开更多历史记录>></view>
