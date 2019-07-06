@@ -14,3 +14,5 @@ Git command:
 		git add -A :提交所有变化
 				-u :提交被修改(modifiled)和被删除(deleted)文件，不包括新文件
 				.  :提交新文件(new)和被修改(modifile)文件，不包括被删除(deleted)文件
+
+		git 训练： Git is a distributed version control system
