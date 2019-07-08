@@ -15,4 +15,4 @@ Git command:
 				-u :提交被修改(modifiled)和被删除(deleted)文件，不包括新文件
 				.  :提交新文件(new)和被修改(modifile)文件，不包括被删除(deleted)文件
 
-		git 训练： Git is a distributed version control system
+		git clone git@github.com:luangtw/work.git: 从远程库克隆 luangtw是github昵称  work.git是github中版本库的name
