@@ -16,3 +16,4 @@ Git command:
 				.  :提交新文件(new)和被修改(modifile)文件，不包括被删除(deleted)文件
 
 		git clone git@github.com:luangtw/work.git: 从远程库克隆 luangtw是github昵称  work.git是github中版本库的name
+		git status: 查看分支状态
