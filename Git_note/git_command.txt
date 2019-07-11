@@ -30,5 +30,3 @@ Git command:
 		git branch:								查看当前所处分支和所有分支，标有*号的即是当前分支
 
 		git merge dev:							合并dev分支到当前分支
-
-		
