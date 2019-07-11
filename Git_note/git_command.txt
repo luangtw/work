@@ -1,0 +1,36 @@
+Git command:
+	本地基础操作：
+		git init: 将当前目录创建为git repository
+		git add "file name": 添加file name 添加到暂存区
+		git commit -m "注释": 将暂存区文件提交到git repository
+
+	远程库 github:
+		git remote add origin git@github.com:name/repository:        关联远程库(origin 远程库名,name github账户名)  
+		git push -u origin master:                       			 向远程库推送master
+		由于远程库是空的，我们第一次推送master分支时，加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令
+
+		git push origin master: 									 推送简化命令
+
+	增删改查：
+		git add -A :提交所有变化
+				-u :提交被修改(modifiled)和被删除(deleted)文件，不包括新文件
+				.  :提交新文件(new)和被修改(modifile)文件，不包括被删除(deleted)文件
+
+		git clone git@github.com:luangtw/work.git: 从远程库克隆 luangtw是github昵称  work.git是github中版本库的name
+		git status: 查看分支状态
+
+
+	分支：
+		git checkout -b dev:					创建dev分支并切换到它
+			{
+				git branch dev:					创建dev分支
+				git checkout dev:				切换到dev分支
+			}
+
+		git branch:								查看当前所处分支和所有分支，标有*号的即是当前分支
+
+		git merge dev:							合并dev分支到当前分支
+
+
+		test: change
+
