@@ -12,7 +12,7 @@ ul,li {
 }
 
 /* header */
-.header {width: 1200px;height: 500px;margin: 0 auto;color: #eee;background: url(images/nav.jpg) no-repeat;background-size: 100% 100%;}
+.header {width: 1200px;height: 500px;margin: 0 auto;color: #eee;background: url(images/nav.jpg) no-repeat;background-size: 100% 100%;border-bottom: 1px solid #fff;}
 
 /* nav */
 /* small */
