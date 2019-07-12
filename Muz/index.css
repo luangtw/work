@@ -12,7 +12,7 @@ ul,li {
 }
 
 /* header */
-.header {width: 1200px;height: 500px;margin: 0 auto;color: #eee;background: url(nav.jpg) no-repeat;background-size: 100% 100%;}
+.header {width: 1200px;height: 500px;margin: 0 auto;color: #eee;background: url(images/nav.jpg) no-repeat;background-size: 100% 100%;}
 
 /* nav */
 /* small */
@@ -26,6 +26,6 @@ ul,li {
 .navBig .left {width: 45%;float: left}
 .navBig .right {width: 45%;float: right}
 .navBig .logoBox {width: 10%;float: left;position: relative;bottom: 34px;}
-.navBig .logoBox .logo {width: 80px; height: 50px;margin: 0 auto;background-image: url(logo.png);background-size: 100%;}
+.navBig .logoBox .logo {width: 80px; height: 50px;margin: 0 auto;background-image: url(images/logo.png);background-size: 100%;}
 .left ul {float: right}
 .navBig ul li {display: inline-block;margin: 0 15px;}
